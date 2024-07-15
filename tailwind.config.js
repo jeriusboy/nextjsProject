@@ -11,7 +11,7 @@ module.exports = {
         quicksand: ["Quicksand", "sans-serif"],
       },
       screens: {
-        xs: "420px",
+        xs: "379px",
         
       },
     },
