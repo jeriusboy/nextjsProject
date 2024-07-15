@@ -10,7 +10,7 @@ const Header = () => {
 	return (
 		<>
 			<div
-				className="hidden lg:flex justify-around top-0 sticky w-full bg-slate-800 p-4 h-24 items-center text-slate-100 group z-40">
+				className="hidden lg:flex justify-around top-0 sticky w-full bg-slate-800 p-4 h-24  items-center text-slate-100 group z-40">
 				<div className="text-3xl font-bold text-cyan-700">
 					<Link  href="/">LOS<span className="text-amber-500">PAY</span></Link>
 				</div>
@@ -31,7 +31,7 @@ const Header = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="block lg:hidden top-0 sticky w-full bg-slate-800 h-16 text-slate-100 group">
+			<div className="block lg:hidden top-0 sticky w-full bg-slate-800 h-24 text-slate-100 group">
 				<div className="flex justify-between p-4">
 					<div className="text-3xl font-bold text-cyan-700">
 						<Link href="/">LOS<span className="text-amber-500">PAY</span></Link>
@@ -60,7 +60,7 @@ const Header = () => {
 					</button>
 				</div>
 				<div className={
-					`w-full bg-slate-800 h-72 absolute top-12 p-4 mt-4 shadow-2xl shadow-slate-700 duration-200 ${
+					`w-full bg-slate-800 h-auto absolute top-12 p-4 mt-4 shadow-2xl shadow-slate-700 duration-200 ${
 						open ? "left-0" : "left-[-100%]"
 					}`
 				}>
