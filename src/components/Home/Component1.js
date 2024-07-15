@@ -17,6 +17,7 @@ const Component1 = () => {
 				>
 					One Platform. Every Payment Possibility
 				</p>
+				<p className="text-slate-700">Making international payments and receivables, easy and efficient.</p>
 			</div>
 		</div>
 	);
