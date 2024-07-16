@@ -2,6 +2,10 @@ import cheaper from "./assets/cheaper.png";
 import faster from "./assets/faster.png";
 import reach from "./assets/reach.png";
 import support from "./assets/support.png";
+import BusinessCard1 from "./assets/business-model-icon-1.png";
+import BusinessCard2 from "./assets/business-model-icon-2.png";
+import BusinessCard3 from "./assets/business-model-icon-3.png";
+
 
 import security from "./assets/1.png";
 import protection from "./assets/2.png";
@@ -50,6 +54,7 @@ export const dataCard4 = [
 		title: "Unified Commerce ›",
 		description: "Connect your online and in-store payment data in one system.",
 	},
+<<<<<<< HEAD
 ];
 
 export const dataCard6 = [
@@ -72,3 +77,27 @@ export const dataCard6 = [
 		img: privacy,
 	},
 ];
+=======
+]
+
+export const dataCard5 = [
+	{
+		id: 1,
+		title: "Open an Account ›",
+		description: "Get an account number and virtual card instantly upon approval. Manage it all from your..",
+		img: BusinessCard1,
+	},
+	{
+		id: 2,
+		title: "No hidden fees ›",
+		description: "Enjoy the lowest transfer fees in the market with transparent pricing and no monthly fees.",
+		img: BusinessCard2,
+	},
+	{
+		id: 3,
+		title: "All in one place ›",
+		description: "No need for separate accounts, cards, or software. Scale faster with a fully integrated..",
+		img: BusinessCard3,
+	},
+]
+>>>>>>> c7bb3b140f50969bc00f48abcfc5106e22b66962
