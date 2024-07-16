@@ -54,7 +54,6 @@ export const dataCard4 = [
 		title: "Unified Commerce ›",
 		description: "Connect your online and in-store payment data in one system.",
 	},
-<<<<<<< HEAD
 ];
 
 export const dataCard6 = [
@@ -77,8 +76,6 @@ export const dataCard6 = [
 		img: privacy,
 	},
 ];
-=======
-]
 
 export const dataCard5 = [
 	{
@@ -100,4 +97,3 @@ export const dataCard5 = [
 		img: BusinessCard3,
 	},
 ]
->>>>>>> c7bb3b140f50969bc00f48abcfc5106e22b66962
