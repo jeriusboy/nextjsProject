@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
@@ -7,10 +7,37 @@ const Header = () => {
 	const Pages = ["Home", "About","Docs","Blog","Contact", "Login"];
 	const [open, setOpen] = useState(false);
 	const pathname = usePathname()
+	const [height, setHeight] = useState(0);
+
+	useEffect(() => {
+		//clientHeight
+		const handleScroll = () => {
+			const scrollPosition = window.pageYOffset;
+			//console.log(scrollPosition);
+			if (scrollPosition > 100) {
+				setHeight(100);
+			}
+			if (scrollPosition > 400) {
+				console.log(100)
+				setHeight(400);
+				//setShowButton(true);
+			} else {
+				//setShowButton(false);
+				setHeight(0)
+			}
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 		<>
 			<div
-				className="hidden lg:flex justify-around top-0 sticky w-full bg-slate-800 p-4 h-24  items-center text-slate-100 group z-40">
+				className={`hidden lg:flex justify-around top-0 w-full bg-slate-800 p-4 h-24  items-center text-slate-100 group z-40
+				${height === 400 && "transition-transform duration-1000 bg-opacity-95 backdrop-blur" }
+				${height === 200 && "opacity-100 sticky" }`}>
 				<div className="text-3xl font-bold text-cyan-700">
 					<Link  href="/">LOS<span className="text-amber-500">PAY</span></Link>
 				</div>

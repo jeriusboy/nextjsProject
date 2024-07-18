@@ -5,11 +5,11 @@ import Footer from "@/components/HF/Footer";
 const DefaultLayout = ({children}) => {
 	return (
 		<div>
-			<Header />
+			<Header/>
 			<main className="flex min-h-screen flex-col items-center justify-between p-24">
 				{children}
 			</main>
-			<Footer />
+			<Footer/>
 		</div>
 	);
 };
