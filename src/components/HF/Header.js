@@ -14,16 +14,17 @@ const Header = () => {
 		const handleScroll = () => {
 			const scrollPosition = window.pageYOffset;
 			//console.log(scrollPosition);
-			if (scrollPosition > 100) {
-				setHeight(100);
+			if (scrollPosition >= 200 && scrollPosition <= 400) {
+				console.log(200)
+				setHeight(200);
 			}
 			if (scrollPosition > 400) {
-				console.log(100)
+				console.log(400)
 				setHeight(400);
 				//setShowButton(true);
-			} else {
-				//setShowButton(false);
-				setHeight(0)
+			}
+			if (scrollPosition === 0) {
+				setHeight(0);
 			}
 		};
 		window.addEventListener('scroll', handleScroll);
@@ -35,18 +36,21 @@ const Header = () => {
 	return (
 		<>
 			<div
-				className={`hidden lg:flex justify-around top-0 w-full bg-slate-800 p-4 h-24  items-center text-slate-100 group z-40
-				${height === 400 && "transition-transform duration-1000 bg-opacity-95 backdrop-blur" }
-				${height === 200 && "opacity-100 sticky" }`}>
+				className={`hidden lg:flex justify-around top-0 w-full bg-white p-4 items-center text-slate-100 group z-40
+				 ${height === 400 ? 'border-b shadow-lg h-16' : 'h-24'}
+				${height === 400 && "sticky bg-opacity-50 backdrop-blur-xl transition-transform duration-[2000ms]" }
+				${height === 200 && "-translate-y-24 transition-transform duration-[2000ms]" }`}
+			>
+				{/*${height === 200 && "-translate-y-24" }*/}
 				<div className="text-3xl font-bold text-cyan-700">
 					<Link  href="/">LOS<span className="text-amber-500">PAY</span></Link>
 				</div>
 				<div>
 					<ul className="flex gap-4">
 						{Pages.map((page) => (
-							<li key={page} className={`hover:text-cyan-700 duration-200 text-xl 
-								${pathname === '/'+page.toLowerCase() && "text-cyan-700"}
-								${pathname === '/' && page === 'Home' && "text-cyan-700"}`}
+							<li key={page} className={`hover:text-cyan-700 duration-200 text-xl text-slate-700
+								${pathname === '/'+page.toLowerCase() && "text-cyan-500"}
+								${pathname === '/' && page === 'Home' && "text-cyan-500"}`}
 
 							>
 								<Link href={`/${page === 'Home' ? '/': page.toLowerCase()}`}>{page}</Link>
@@ -58,7 +62,9 @@ const Header = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="block lg:hidden top-0 sticky w-full bg-slate-800 text-slate-100 group z-30">
+			<div className={`block lg:hidden top-0 sticky w-full bg-white text-slate-100 group z-30
+				${height === 400 && "sticky bg-opacity-50 backdrop-blur-xl transition-transform duration-[2000ms] border-b shadow-lg" }
+				${height === 200 && "-translate-y-32 transition-transform duration-[2000ms]" }`}>
 				<div className="flex justify-between p-4">
 					<div className="text-3xl font-bold text-cyan-700">
 						<Link href="/">LOS<span className="text-amber-500">PAY</span></Link>
@@ -66,12 +72,12 @@ const Header = () => {
 					<button
 						type="button"
 						onClick={() => setOpen(!open)}
-						className="cursor-pointer hover:text-amber-500 duration-200"
+						className="cursor-pointer hover:text-amber-500 duration-200 "
 					>
 						{
 							!open &&
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-							     stroke="currentColor" className="w-6 h-6">
+							     stroke="none" className="w-6 h-6 stroke-cyan-700">
 								<path strokeLinecap="round" strokeLinejoin="round"
 								      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
 							</svg>
@@ -80,7 +86,7 @@ const Header = () => {
 						{
 							open &&
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-							     stroke="currentColor" className="w-6 h-6">
+							     stroke="none" className="w-6 h-6 stroke-cyan-700">
 								<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
 							</svg>
 						}
