@@ -46,9 +46,9 @@ const Header = () => {
 					<Link  href="/">LOS<span className="text-amber-500">PAY</span></Link>
 				</div>
 				<div>
-					<ul className="flex gap-4">
+					<ul className="flex gap-4 text-slate-500 text-lg">
 						{Pages.map((page) => (
-							<li key={page} className={`hover:text-cyan-700 duration-200 text-xl text-slate-700
+							<li key={page} className={`hover:text-cyan-700 duration-200 
 								${pathname === '/'+page.toLowerCase() && "text-cyan-500"}
 								${pathname === '/' && page === 'Home' && "text-cyan-500"}`}
 
@@ -57,12 +57,12 @@ const Header = () => {
 							</li>
 						))}
 						<li>
-							<Link className="px-5 py-2 bg-cyan-700 rounded text-xl" href="/register">Register</Link>
+							<Link className="px-5 py-2 bg-cyan-700 rounded text-xl text-white" href="/register">Register</Link>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<div className={`block lg:hidden top-0 sticky w-full bg-white text-slate-100 group z-30
+			<div className={`block lg:hidden top-0 w-full bg-white text-slate-100 group z-30
 				${height === 400 && "sticky bg-opacity-50 backdrop-blur-xl transition-transform duration-[2000ms] border-b shadow-lg" }
 				${height === 200 && "-translate-y-32 transition-transform duration-[2000ms]" }`}>
 				<div className="flex justify-between p-4">
@@ -97,9 +97,9 @@ const Header = () => {
 						open ? "scale-100 left-0" : "pointer-events-none scale-0 -translate-y-96"
 					}`
 				}>
-					<ul className="flex gap-4 flex-col">
+					<ul className="flex gap-4 flex-col text-sm md:text-lg">
 						{Pages.map((page) => (
-							<li key={page} className={`hover:text-cyan-700 duration-200 text-xl 
+							<li key={page} className={`hover:text-cyan-700 duration-200
 								${pathname === '/'+page.toLowerCase() && "text-cyan-700"}
 								${pathname === '/' && page === 'Home' && "text-cyan-700"}`}
 
@@ -108,7 +108,7 @@ const Header = () => {
 							</li>
 						))}
 						<li>
-							<Link className="px-5 py-2 bg-cyan-700 rounded text-xl" href="/register">Register</Link>
+							<Link className="px-5 py-2 bg-cyan-700 rounded text-xl text-white" href="/register">Register</Link>
 						</li>
 					</ul>
 				</div>
