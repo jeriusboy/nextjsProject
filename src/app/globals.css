@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
 
 :root {
@@ -36,4 +37,11 @@ li {
   .text-balance {
     text-wrap: balance;
   }
+}
+.background-image {
+  background-image: url(
+'../assets/World map.png');
+  background-size: cover;
+  background-position: center;
+  
 }
